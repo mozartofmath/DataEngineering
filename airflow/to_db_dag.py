@@ -10,6 +10,8 @@ from airflow.utils.dates import days_ago
 
 #defining DAG arguments
 
+DBT_PROJECT_DIR = '/usr/local/airflow/dbt'
+
 # You can override them on a per-task basis during operator initialization
 default_args = {
     'owner': 'yosef',
@@ -38,4 +40,16 @@ insert_to_db = BashOperator(
     dag=dag,
 )
 
-insert_to_db
+dbt_seed = BashOperator(
+    task_id='dbt_seed',
+    bash_command=f"dbt seed --profiles-dir {DBT_PROJECT_DIR} --project-dir {DBT_PROJECT_DIR}",
+    dag=dag,
+)
+
+dbt_run = BashOperator(
+        task_id="dbt_run",
+        bash_command=f"dbt run --profiles-dir {DBT_PROJECT_DIR} --project-dir {DBT_PROJECT_DIR}",
+        dag=dag,
+    )
+
+insert_to_db >> dbt_seed >> dbt_run

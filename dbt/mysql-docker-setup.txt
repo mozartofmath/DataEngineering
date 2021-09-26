@@ -1,0 +1,2 @@
+docker run -p 13306:3306 --name mysql-docker-local -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+mysql --host=127.0.0.1 --port=13306 -u root -p

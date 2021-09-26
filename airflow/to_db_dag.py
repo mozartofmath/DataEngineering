@@ -10,7 +10,7 @@ from airflow.utils.dates import days_ago
 
 #defining DAG arguments
 
-DBT_PROJECT_DIR = '/usr/local/airflow/dbt'
+DBT_PROJECT_DIR = '$AIRFLOW_HOME/dbt'
 
 # You can override them on a per-task basis during operator initialization
 default_args = {

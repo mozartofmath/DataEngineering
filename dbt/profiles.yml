@@ -1,0 +1,12 @@
+project1:
+  outputs:
+
+    dev:
+      type: mysql
+      threads: 1
+      host: localhost
+      port: 13306
+      username : root
+      password: password
+      schema: analytics
+  target: dev

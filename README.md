@@ -20,3 +20,10 @@ pip install -r requirements.txt
 ## Code
 The ```pems_sorted``` folder contains the data, a large number of **.parquet** files. The ```data-engineering-dbt``` folder contains our **dbt project**. The ```airflow``` folder contains our **airflow dags**. The ```scripts``` folder contains python scripts that inserts all the data into a sql database.
 
+## Database Migration
+If you want to migrate your data warehouse from mysql to postgresql, you can configure your mysql and postgresql usernames and passwords in the ```mysql2pgsql.yml``` file and then execute the following commands from the main project directory.
+```
+pip install py-mysql2pgsql
+py-mysql2pgsql -v -f mysql2pgsql
+```
+

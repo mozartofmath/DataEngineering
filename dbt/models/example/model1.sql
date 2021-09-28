@@ -6,15 +6,17 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+-- {{ config(materialized='table') }}
 
-with sample_data as (
+-- with sample_data as (
 
-    select * from sensors.sensor_data where id < 5
-)
+--     select 
+--         timeperiod
+--     from 10acad_sensor_data.sensor_data;
+-- )
 
-select *
-from sensors.sensor_data
+select timeperiod, flow1, occupancy1, speed1
+from 10acad_sensor_data.sensor_data
 
 /*
     Uncomment the line below to remove records with null `id` values

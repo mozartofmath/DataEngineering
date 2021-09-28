@@ -1,3 +1,4 @@
+
 project1:
   outputs:
 
@@ -5,8 +6,27 @@ project1:
       type: mysql
       threads: 1
       host: localhost
-      port: 13306
+      port: 3306
       username : root
-      password: password
+      password: root
       schema: analytics
+    
+    prod:
+      type: mysql
+      threads: 1
+      host: localhost
+      port: 3306
+      username : root
+      password: root
+      schema: analytics
+
+    stag:
+      type: mysql
+      threads: 1
+      host: localhost
+      port: 3306
+      username : root
+      password: root
+      schema: analytics
+  
   target: dev

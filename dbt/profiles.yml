@@ -30,3 +30,36 @@ project1:
       schema: analytics
   
   target: dev
+
+
+project1_postgres:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      username : root
+      password: root
+      schema: analytics
+    
+    prod:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      username : root
+      password: root
+      schema: analytics
+
+    stag:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      username : root
+      password: root
+      schema: analytics
+  
+  target: dev
